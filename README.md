@@ -11,6 +11,7 @@ C:.
 │
 └───src  # fichier source
         index.php
+        db.sql
 ```
 
 ## commandes à connaître
