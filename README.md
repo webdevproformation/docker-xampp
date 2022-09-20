@@ -14,6 +14,13 @@ C:.
         db.sql
 ```
 
+## Description
+
+- debian
+- php 8.0 mod_apache avec les modules pdo + xdebug
+- phpmyadmin
+- mysql 5.7 avec un compte root / root
+
 ## commandes à connaître
 
 cmd : start / stop / rebuild Dockerfile divers
