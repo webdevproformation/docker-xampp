@@ -26,7 +26,7 @@ C:.
 
 ## Documentation Doctrine PHP
 
-[https://www.doctrine-project.org/projects/doctrine-orm/en/2.13/tutorials/getting-started.html#project-setup](Doctrine PHP Setup)
+[Doctrine PHP Setup](https://www.doctrine-project.org/projects/doctrine-orm/en/2.13/tutorials/getting-started.html#project-setup)
 
 ## commandes à connaître
 
