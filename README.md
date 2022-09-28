@@ -12,6 +12,8 @@ C:.
 └───src  # fichier source
         index.php
         db.sql
+        composer.json
+        composer.lock
 ```
 
 ## Description

@@ -2,6 +2,8 @@
 
 // phpinfo();
 
+
+
 try{
   
   $db="toto";
