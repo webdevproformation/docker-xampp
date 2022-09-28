@@ -2,23 +2,43 @@
 
 // phpinfo();
 
+use App\Article;
+use Doctrine\ORM\ORMSetup As Setup ;
+use Doctrine\ORM\EntityManager;
+
+require_once "vendor/autoload.php";
+
+// Create a simple "default" Doctrine ORM configuration for Annotations
+$isDevMode = true;
+$proxyDir = null;
+$cache = null;
+$useSimpleAnnotationReader = false;
+$config = Setup::createAnnotationMetadataConfiguration([__DIR__."/entities"], $isDevMode, $proxyDir, $cache, $useSimpleAnnotationReader);
+
+// database configuration parameters
+$dbParams = [
+  'driver' => 'pdo_mysql',
+  'user' => 'root',
+  'password' => 'root',
+  'dbname' => 'toto',
+  'host' => "mysql",
+  "charset" => "utf8mb4"
+];
+
+// obtaining the entity manager
+$entityManager = EntityManager::create($dbParams, $config);
 
 
-try{
-  
-  $db="toto";
-  $host = "mysql:host=mysql;dbname=$db;charset=utf8mb4" ;
-  $connexion = new PDO( $host , "root","root");
-  $connexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
-  $connexion->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
+$article = new Article();
 
-  $req = $connexion->prepare("SELECT * FROM articles");
+$article->setTitre("nouvel article")
+        ->setContenu("lorem ipsum sed lorem ...")
+        ->setLike(30);
 
-  $result = $req->execute();
+$articleRepository = $entityManager->getRepository(Article::class);
 
-  var_dump( $req->fetchAll( ));
+$entityManager->persist($article);
 
-}catch (PDOException $e){
-  $msg = 'ERREUR PDO dans ' . $e->getFile() . ' L.' . $e->getLine() . ' : ' . $e->getMessage();
-  die($msg);
-}
+$entityManager->flush();
+
+var_dump($articleRepository->findAll());
