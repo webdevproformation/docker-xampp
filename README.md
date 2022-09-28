@@ -10,6 +10,9 @@ C:.
 ├───db # fichier source mysql
 │
 └───src  # fichier source
+        vendor\
+        entities\
+                Article.php
         index.php
         db.sql
         composer.json
