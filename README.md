@@ -1,4 +1,4 @@
-# mini xampp avec docker
+# mini xampp pour Doctrine avec docker
 
 ## Architecture
 
@@ -20,6 +20,13 @@ C:.
 - php 8.0 mod_apache avec les modules pdo + xdebug
 - phpmyadmin
 - mysql 5.7 avec un compte root / root
+- install git zip curl
+- install composer
+- préparation du fichier composer.json pour installation de Doctrine PHP
+
+## Documentation Doctrine PHP
+
+[https://www.doctrine-project.org/projects/doctrine-orm/en/2.13/tutorials/getting-started.html#project-setup](Doctrine PHP Setup)
 
 ## commandes à connaître
 
